@@ -22,9 +22,15 @@
                     <div class="form-group row">
                         <label class="col-md-2">サムネ画像</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image">
+                            <input type="file" class="form-control-file" name="thumbnail">
                         </div>
                     </div>
+                     <div class="form-group row">
+                        <label class="col-md-2">タグ</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="tag" value="{{ old('tag') }}">
+                        </div>
+                    </div>                   
                     <div class="form-group row">
                         <label class="col-md-2">タイトル</label>
                         <div class="col-md-10">
@@ -36,121 +42,121 @@
                     <div class="form-group row">
                         <label class="col-md-2">本文①</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="10">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body1" rows="10">{{ old('body1') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">画像①</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image">
+                            <input type="file" class="form-control-file" name="image1">
                         </div>
                     </div>
                      <div class="form-group row">
                         <label class="col-md-2">本文②</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="10">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body2" rows="10">{{ old('body2') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">画像②</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image">
+                            <input type="file" class="form-control-file" name="image2">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">本文③</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="10">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body3" rows="10">{{ old('body3') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">画像③</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image">
+                            <input type="file" class="form-control-file" name="image3">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">本文④</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="10">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body4" rows="10">{{ old('body4') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">画像④</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image">
+                            <input type="file" class="form-control-file" name="image4">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">本文⑤</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="10">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body5" rows="10">{{ old('body5') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">画像⑤</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image">
+                            <input type="file" class="form-control-file" name="image5">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">本文⑥</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="10">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body6" rows="10">{{ old('body6') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">画像⑥</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image">
+                            <input type="file" class="form-control-file" name="image6">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">本文⑦</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="10">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body7" rows="10">{{ old('body7') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">画像⑦</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image">
+                            <input type="file" class="form-control-file" name="image7">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">本文⑧</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="10">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body8" rows="10">{{ old('body8') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">画像⑧</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image">
+                            <input type="file" class="form-control-file" name="image8">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">本文⑨</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="10">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body9" rows="10">{{ old('body9') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">画像⑨</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image">
+                            <input type="file" class="form-control-file" name="image9">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">本文⑩</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="10">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="body10" rows="10">{{ old('body10') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">画像⑩</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image">
+                            <input type="file" class="form-control-file" name="image10">
                         </div>
                     </div>
                     @csrf
