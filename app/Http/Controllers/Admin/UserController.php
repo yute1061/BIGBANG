@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+// 以下を追記することでModelが扱えるようになる
+use App\Models\User;
+
 class UserController extends Controller
 {
     public function add()
@@ -14,6 +17,12 @@ class UserController extends Controller
 
     public function create(Request $request)
     {
+        // Validationを行う
+        $this->validate($request, User::$rules);
+        
+        $user = new User;
+        $form = $request->all();
+        
         return redirect('admin/user/create');
     }
 
