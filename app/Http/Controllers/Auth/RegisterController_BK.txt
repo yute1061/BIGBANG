@@ -52,12 +52,6 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'profile_image' => ['image'],
-            'mybike' => ['required', 'string'],
-            'mybike_image' => ['image'],
-            'career' => ['required', 'integer'],
-            'objective' => ['required', 'string'],
-            'introduction' => ['required', 'string'],
         ]);
     }
 
@@ -69,22 +63,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $profile_image=request()->file('profile_image')->getClientOriginalName();
-        request()->file('profile_image')->storeAs('public/images', $profile_image);
-        
-        $mybike_image=request()->file('mybike_image')->getClientOriginalName();
-        request()->file('mybike_image')->storeAs('public/images', $mybike_image);
-        
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'profile_image' => $profile_image,
-            'mybike' => $data['mybike'],
-            'mybike_image' => $mybike_image,
-            'career' => $data['career'],
-            'objective' => $data['objective'],
-            'introduction' => $data['introduction'],
         ]);
     }
 }

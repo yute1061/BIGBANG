@@ -16,13 +16,7 @@ class UserController extends Controller
     }
 
     public function create(Request $request)
-    {
-        // Validationを行う
-        $this->validate($request, User::$rules);
-        
-        $user = new User;
-        $form = $request->all();
-        
+    {   
         return redirect('admin/user/create');
     }
 

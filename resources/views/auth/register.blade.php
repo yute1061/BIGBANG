@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
                         
                         @if (count($errors) > 0)
@@ -64,7 +64,49 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
-                        </div>            
+                        </div>
+                        <div class="row mb-3">
+                            <label for="profile_image" class="col-md-4 col-form-label text-md-end">{{ __('プロフィール画像')}}</label>
+                            
+                            <div class="col-md-6">
+                                <input id="profile_image" type="file" class="form-control-file" name="profile_image">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="mybike" class="col-md-4 col-form-label text-md-end">{{ __('愛車')}}</label>
+                            
+                            <div class="col-md-6">
+                                <input id="mybike" type="text" class="form-control" name="mybike" value="{{ old('mybike') }}">
+                            </div>
+                        </div>                      
+                        <div class="row mb-3">
+                            <label for="mybike_image" class="col-md-4 col-form-label text-md-end">{{ __('愛車画像')}}</label>
+                            
+                            <div class="col-md-6">
+                                <input id="mybike_image" type="file" class="form-control-file" name="mybike_image">
+                            </div>
+                        </div>                      
+                        <div class="row mb-3">
+                            <label for="career" class="col-md-4 col-form-label text-md-end">{{ __('自転車歴')}}</label>
+                            
+                            <div class="col-md-6">
+                                <input id="career" type="text" class="form-control" name="career" value="{{ old('career') }}">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="objective" class="col-md-4 col-form-label text-md-end">{{ __('現在の目標')}}</label>
+                            
+                            <div class="col-md-6">
+                                <input id="objective" type="text" class="form-control" name="objective" value="{{ old('objective') }}">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="introduction" class="col-md-4 col-form-label text-md-end">{{ __('自己紹介')}}</label>
+                            
+                            <div class="col-md-6">
+                                <input id="introduction" type="text" class="form-control" name="introduction" value="{{ old('introduction') }}">
+                            </div>
+                        </div>
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

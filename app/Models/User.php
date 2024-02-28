@@ -24,7 +24,12 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        
+        'mybike_image',
+        'profile_image',
+        'mybike',
+        'career',
+        'objective',
+        'introduction',
     ];
 
     /**
