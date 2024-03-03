@@ -68,12 +68,20 @@ class RegisterController extends Controller
      * @return \App\Models\User
      */
     protected function create(array $data)
-    {
-        $profile_image=request()->file('profile_image')->getClientOriginalName();
-        request()->file('profile_image')->storeAs('public/images', $profile_image);
+    {   
+        if (isset($data['profile_image'])) {
+            $profile_image=request()->file('profile_image')->getClientOriginalName();
+            request()->file('profile_image')->storeAs('public/image', $profile_image);
+        } else {
+            $profile_image = null;
+        }
         
-        $mybike_image=request()->file('mybike_image')->getClientOriginalName();
-        request()->file('mybike_image')->storeAs('public/images', $mybike_image);
+        if (isset($data['mybike_image'])) {
+            $mybike_image=request()->file('mybike_image')->getClientOriginalName();
+            request()->file('mybike_image')->storeAs('public/image', $mybike_image);
+        } else {
+            $mybike_image = null;
+        }
         
         return User::create([
             'name' => $data['name'],
