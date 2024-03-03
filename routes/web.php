@@ -21,6 +21,9 @@ use App\Http\Controllers\Admin\ArticleController;
 Route::controller(ArticleController::class)->prefix('admin')->name('admin.')->middleware('auth')->group(function() {
     Route::get('article/create', 'add')->name('article.add');
     Route::post('article/create', 'create')->name('article.create'); 
+    Route::get('article', 'index')->name('article.index');
+    Route::get('article/edit', 'edit')->name('article.edit');
+    Route::post('article/edit', 'update')->name('article.update');
 });
 
 use App\Http\Controllers\Admin\UserController;
