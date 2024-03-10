@@ -238,7 +238,7 @@ class ArticleController extends Controller
         } 
 
         unset($article_form['_token']);      
-        unset($news_form['remove']);
+        unset($article_form['remove']);
         unset($article_form['image1']);
         unset($article_form['image2']);
         unset($article_form['image3']);
@@ -255,5 +255,16 @@ class ArticleController extends Controller
         $article->save();
 
         return redirect('admin/article');
+    }
+    
+    public function delete(Request $request)
+    {
+        // 該当するArticle Modelを取得
+        $article = Article::find($request->id);
+
+        // 削除する
+        $article->delete();
+
+        return redirect('admin/article/');
     }
 }

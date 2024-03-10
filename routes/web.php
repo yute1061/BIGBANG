@@ -24,14 +24,13 @@ Route::controller(ArticleController::class)->prefix('admin')->name('admin.')->mi
     Route::get('article', 'index')->name('article.index');
     Route::get('article/edit', 'edit')->name('article.edit');
     Route::post('article/edit', 'update')->name('article.update');
+    Route::get('article/delete', 'delete')->name('article.delete');
 });
 
 use App\Http\Controllers\Admin\UserController;
 Route::controller(UserController::class)->prefix('admin')->name('admin.')->middleware('auth')->group(function() {
-    Route::get('user/create', 'add')->name('user.add');
-    Route::post('user/create', 'create')->name('user.create');
-    Route::get('user/edit', 'edit')->name('user.create'); 
-    Route::post('user/edit', 'update')->name('user.create');     
+    Route::get('user/edit', 'edit')->name('user.edit'); 
+    Route::post('user/edit', 'update')->name('user.update');     
 });
 
 Auth::routes();

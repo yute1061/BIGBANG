@@ -35,7 +35,7 @@
                                 <th width="10%">ID</th>
                                 <th width="20%">タイトル</th>
                                 <th width="50%">本文</th>
-                                <th width="10%">操作</th>
+                                <th width="20%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -47,6 +47,9 @@
                                     <td>
                                         <div>
                                             <a href="{{ route('admin.article.edit', ['id' => $article->id]) }}">編集</a>
+                                        </div>
+                                        <div>
+                                            <a href="{{ route('admin.article.delete', ['id' => $article->id]) }}">削除</a>
                                         </div>
                                     <td>
                                 </tr>
