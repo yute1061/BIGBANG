@@ -147,7 +147,7 @@ class ArticleController extends Controller
         // 送信されてきたフォームデータを格納する
         $article_form = $request->all();
         
-        if ($request->remove == 'true') {
+        if ($request->remove1 == 'true') {
             $article_form['image_path1'] = null;
         } elseif ($request->file('image1')) {
             $path = $request->file('image1')->store('public/image');
@@ -156,7 +156,7 @@ class ArticleController extends Controller
             $article_form['image_path1'] = $article->image_path1;
         } 
         
-        if ($request->remove == 'true') {
+        if ($request->remove2 == 'true') {
             $article_form['image_path2'] = null;
         } elseif ($request->file('image2')) {
             $path = $request->file('image2')->store('public/image');
@@ -165,7 +165,7 @@ class ArticleController extends Controller
             $article_form['image_path2'] = $article->image_path2;
         } 
         
-        if ($request->remove == 'true') {
+        if ($request->remove3 == 'true') {
             $article_form['image_path3'] = null;
         } elseif ($request->file('image3')) {
             $path = $request->file('image3')->store('public/image');
@@ -174,7 +174,7 @@ class ArticleController extends Controller
             $article_form['image_path3'] = $article->image_path3;
         } 
         
-        if ($request->remove == 'true') {
+        if ($request->remove4 == 'true') {
             $article_form['image_path4'] = null;
         } elseif ($request->file('image4')) {
             $path = $request->file('image4')->store('public/image');
@@ -183,7 +183,7 @@ class ArticleController extends Controller
             $article_form['image_path4'] = $article->image_path4;
         } 
 
-        if ($request->remove == 'true') {
+        if ($request->remove5 == 'true') {
             $article_form['image_path5'] = null;
         } elseif ($request->file('image5')) {
             $path = $request->file('image5')->store('public/image');
@@ -192,7 +192,7 @@ class ArticleController extends Controller
             $article_form['image_path5'] = $article->image_path5;
         } 
         
-        if ($request->remove == 'true') {
+        if ($request->remove6 == 'true') {
             $article_form['image_path6'] = null;
         } elseif ($request->file('image6')) {
             $path = $request->file('image6')->store('public/image');
@@ -201,7 +201,7 @@ class ArticleController extends Controller
             $article_form['image_path6'] = $article->image_path6;
         } 
         
-        if ($request->remove == 'true') {
+        if ($request->remove7 == 'true') {
             $article_form['image_path7'] = null;
         } elseif ($request->file('image7')) {
             $path = $request->file('image7')->store('public/image');
@@ -210,7 +210,7 @@ class ArticleController extends Controller
             $article_form['image_path7'] = $article->image_path7;
         } 
         
-        if ($request->remove == 'true') {
+        if ($request->remove8 == 'true') {
             $article_form['image_path8'] = null;
         } elseif ($request->file('image8')) {
             $path = $request->file('image8')->store('public/image');
@@ -219,7 +219,7 @@ class ArticleController extends Controller
             $article_form['image_path8'] = $article->image_path8;
         } 
 
-        if ($request->remove == 'true') {
+        if ($request->remove9 == 'true') {
             $article_form['image_path9'] = null;
         } elseif ($request->file('image9')) {
             $path = $request->file('image9')->store('public/image');
@@ -228,7 +228,7 @@ class ArticleController extends Controller
             $article_form['image_path9'] = $article->image_path9;
         } 
         
-        if ($request->remove == 'true') {
+        if ($request->remove10 == 'true') {
             $article_form['image_path10'] = null;
         } elseif ($request->file('image10')) {
             $path = $request->file('image10')->store('public/image');
@@ -238,7 +238,16 @@ class ArticleController extends Controller
         } 
 
         unset($article_form['_token']);      
-        unset($article_form['remove']);
+        unset($article_form['remove1']);
+        unset($article_form['remove2']);
+        unset($article_form['remove3']);
+        unset($article_form['remove4']);
+        unset($article_form['remove5']);
+        unset($article_form['remove6']);
+        unset($article_form['remove7']);
+        unset($article_form['remove8']);
+        unset($article_form['remove9']);
+        unset($article_form['remove10']);
         unset($article_form['image1']);
         unset($article_form['image2']);
         unset($article_form['image3']);
