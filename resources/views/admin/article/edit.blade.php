@@ -235,6 +235,24 @@
                         </div>
                     </div>
                 </form>
+                <div class="row mt-5">
+                    <div class="col-md-4 mx-auto">
+                        <?php
+                            $edit_number = 1;
+                        ?>
+                        <h3>編集履歴</h3>
+                        <ul class="list-group">
+                            @if ($article_form->histories != NULL)
+                                @foreach ($article_form->histories as $history)
+                                    <li class="list-group-item">{{ $edit_number }}回目　{{ $history->edited_at }}</li>
+                                    <?php
+                                        $edit_number = $edit_number + 1;
+                                    ?>
+                                @endforeach
+                            @endif
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

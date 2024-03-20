@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 // 以下を追記することでModelが扱えるようになる
 use App\Models\Article;
+use App\Models\History;
+// 以下を追記することでCarcon(現在日時)が扱えるようになる
+use Carbon\Carbon;
 
 class ArticleController extends Controller
 {
@@ -262,6 +265,12 @@ class ArticleController extends Controller
         // 該当するデータを上書きして保存する
         $article->fill($article_form);
         $article->save();
+        
+        // 編集履歴を保存
+        $history = new History();
+        $history->article_id = $article->id;
+        $history->edited_at = Carbon::now();
+        $history->save();
 
         return redirect('admin/article');
     }

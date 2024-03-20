@@ -43,6 +43,7 @@ class UserController extends Controller
             'introduction' => ['required', 'string'],
         ]);
         
+        // 編集前の情報を$userに格納する
         $user = User::find($request->id);
         // 送信されてきたフォームデータを格納する
         $user_form = $request->all();

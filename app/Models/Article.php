@@ -15,4 +15,10 @@ class Article extends Model
     'title' => 'required',
     'body1' => 'required',
     );
+    
+    // Article Modelに関連付けを行う
+    public function histories()
+    {
+        return $this->hasMany('App\Models\History');
+    }
 }
