@@ -230,6 +230,8 @@
                     <div class="form-group row">
                         <div class="col-md-10">
                             <input type="hidden" name="id" value="{{ $article_form->id }}">
+                            <input type="hidden" name="user_id" value="{{ $article_form->user_id }}">
+                            <input type="hidden" name="user_name" value="{{ $article_form->user_name }}">
                             @csrf
                             <input type="submit" class="btn btn-primary" value="更新">
                         </div>

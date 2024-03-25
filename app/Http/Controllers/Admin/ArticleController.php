@@ -5,8 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+//この2行がないとDB情報とユーザー情報が使えない
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+
 // 以下を追記することでModelが扱えるようになる
 use App\Models\Article;
+use App\Models\User;
 use App\Models\History;
 // 以下を追記することでCarcon(現在日時)が扱えるようになる
 use Carbon\Carbon;
@@ -15,7 +20,10 @@ class ArticleController extends Controller
 {
     public function add()
     {
-        return view('admin.article.create');
+        // User Modelからログイン中のデータを取得する
+        $id = Auth::id();
+        $user = User::find($id);
+        return view('admin.article.create', ['user' => $user]);
     }
     
     public function create(Request $request)
@@ -145,7 +153,7 @@ class ArticleController extends Controller
     {
         // Validationをかける
         $this->validate($request, Article::$rules);
-        // Article Modelからデータを取得する
+        // Article Modelから編集前のデータを取得する
         $article = Article::find($request->id);
         // 送信されてきたフォームデータを格納する
         $article_form = $request->all();

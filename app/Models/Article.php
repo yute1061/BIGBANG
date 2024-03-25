@@ -14,9 +14,11 @@ class Article extends Model
     'tag' => 'required',
     'title' => 'required',
     'body1' => 'required',
+    'user_id' => 'required',
+    'user_name' => 'required',
     );
     
-    // Article Modelに関連付けを行う
+    // Article ModelとHistory Modelに関連付けを行う
     public function histories()
     {
         return $this->hasMany('App\Models\History');

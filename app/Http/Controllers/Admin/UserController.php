@@ -15,6 +15,7 @@ use Illuminate\Validation\Rule;
 
 // 以下を追記することでModelが扱えるようになる
 use App\Models\User;
+use App\Models\Article;
 
 class UserController extends Controller
 {
@@ -82,5 +83,18 @@ class UserController extends Controller
         $user->save();
         
         return redirect('admin/user/edit');
+    }
+    
+    public function mypage(Request $request)
+    {   
+        $id = Auth::id();
+        $posts = User::find($id);
+        $review = Article::all()->sortByDesc('created_at');
+        
+        if (empty($posts)) {
+            return view('auth.login');  
+        } else {
+            return view('admin.user.mypage', ['posts' => $posts, 'review' => $review]);  
+        }
     }
 }

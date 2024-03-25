@@ -30,7 +30,8 @@ Route::controller(ArticleController::class)->prefix('admin')->name('admin.')->mi
 use App\Http\Controllers\Admin\UserController;
 Route::controller(UserController::class)->prefix('admin')->name('admin.')->middleware('auth')->group(function() {
     Route::get('user/edit', 'edit')->name('user.edit'); 
-    Route::post('user/edit', 'update')->name('user.update');     
+    Route::post('user/edit', 'update')->name('user.update');
+    Route::get('user/mypage', 'mypage')->name('user.index');
 });
 
 Auth::routes();
