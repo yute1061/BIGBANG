@@ -82,19 +82,19 @@ class UserController extends Controller
         $user->fill($user_form);
         $user->save();
         
-        return redirect('admin/user/edit');
+        return redirect('admin/user/mypage');
     }
     
     public function mypage(Request $request)
     {   
         $id = Auth::id();
-        $posts = User::find($id);
-        $review = Article::all()->sortByDesc('created_at');
+        $user = User::find($id);
+        $article = Article::all()->sortByDesc('created_at');
         
-        if (empty($posts)) {
+        if (empty($user)) {
             return view('auth.login');  
         } else {
-            return view('admin.user.mypage', ['posts' => $posts, 'review' => $review]);  
+            return view('admin.user.mypage', ['user' => $user, 'article' => $article]);  
         }
     }
 }
