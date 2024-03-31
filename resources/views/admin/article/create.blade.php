@@ -10,8 +10,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>記事の新規作成</h2>
-                <form action="{{ route('admin.article.create') }}" method="post" enctype="multipart/form-data">
-
+                <form action="{{ route('admin.article.preview') }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)
@@ -162,7 +161,7 @@
                     @csrf
                     <input type="hidden" name="user_id" value="{{ $user->id }}">
                     <input type="hidden" name="user_name" value="{{ $user->name }}">
-                    <input type="submit" class="btn btn-primary" value="更新">
+                    <input type="submit" class="btn btn-primary" value="プレビュー">
                 </form>
             </div>
         </div>

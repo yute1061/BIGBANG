@@ -26,15 +26,21 @@ class ArticleController extends Controller
         return view('admin.article.create', ['user' => $user]);
     }
     
-    public function create(Request $request)
+    public function preview(Request $request)
     {
-        // Validationを行う
         $this->validate($request, Article::$rules);
-
+        
         $article = new Article;
         $form = $request->all();
+     
+        // フォームから画像が送信されてきたら、保存して、$article に画像のパスを保存する
+        if (isset($form['thumbnail'])) {
+            $path = $request->file('thumbnail')->store('public/image');
+            $article->thumbnail_path = basename($path);
+        } else {
+            $article->thumbnail_path = null;
+        }
         
-        // フォームから画像が送信されてきたら、保存して、$article->image_path に画像のパスを保存する
         if (isset($form['image1'])) {
             $path = $request->file('image1')->store('public/image');
             $article->image_path1 = basename($path);
@@ -123,7 +129,21 @@ class ArticleController extends Controller
         $article->save();
         
         // admin/article/createにリダイレクトする
-        return redirect('admin/article/create');
+        return view('admin.article.preview', ['article' => $article]);
+    }
+    
+    public function create(Request $request)
+    {
+        $user = Auth::user();
+        $article = Article::find($request->id);
+
+        $article->user_id = $user->id;
+        $article->user_name = $user->name;
+        
+        $article->save();
+        
+        // admin/article/createにリダイレクトする
+        return redirect('admin/article');
     }
     
     public function index(Request $request)
@@ -157,6 +177,15 @@ class ArticleController extends Controller
         $article = Article::find($request->id);
         // 送信されてきたフォームデータを格納する
         $article_form = $request->all();
+
+        if ($request->remove_thumbnail == 'true') {
+            $article_form['thumbnail_path'] = null;
+        } elseif ($request->file('thumbnail')) {
+            $path = $request->file('thumbnail')->store('public/image');
+            $article_form['thumbnail_path'] = basename($path);
+        } else {
+            $article_form['thumbnail_path'] = $article->image_path1;
+        } 
         
         if ($request->remove1 == 'true') {
             $article_form['image_path1'] = null;
@@ -248,7 +277,8 @@ class ArticleController extends Controller
             $article_form['image_path10'] = $article->image_path10;
         } 
 
-        unset($article_form['_token']);      
+        unset($article_form['_token']);
+        unset($article_form['remove_thumbnail']);
         unset($article_form['remove1']);
         unset($article_form['remove2']);
         unset($article_form['remove3']);
