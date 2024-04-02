@@ -35,6 +35,13 @@ Route::controller(UserController::class)->prefix('admin')->name('admin.')->middl
     Route::get('user/mypage', 'mypage')->name('user.index');
 });
 
+// adminここまで //
+
 Auth::routes();
+
+use App\Http\Controllers\NavController as PublicNavController;
+Route::controller(PublicNavController::class)->group(function() {
+    Route::get('article/page', 'article_page')->name('article.page');
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

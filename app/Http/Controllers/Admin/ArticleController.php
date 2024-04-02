@@ -142,7 +142,7 @@ class ArticleController extends Controller
         
         $article->save();
         
-        // admin/article/createにリダイレクトする
+        // admin/article にリダイレクトする
         return redirect('admin/article');
     }
     

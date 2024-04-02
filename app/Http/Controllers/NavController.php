@@ -25,9 +25,18 @@ class NavController extends Controller
         return view('article_list.index');
     }
     
-    public function article(Request $request)
-    {   
-        return view('article.index');
+    public function article_page(Request $request)
+    {         
+        $user_id = Auth::id();
+        if (empty($user_id)) {
+            $user = null; //ログアウト時はnullを渡す
+        } else {
+            $user = User::find($user_id);
+        }
+        $id = $request->id;
+        $posts = Article::find($id);
+
+        return view('article.page', ['posts' => $posts, 'user' => $user]);
     }
     
     public function about()
