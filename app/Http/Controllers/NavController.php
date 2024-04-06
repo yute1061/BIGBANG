@@ -17,9 +17,9 @@ class NavController extends Controller
     //
     public function toppage(Request $request)
     {   
-        $article = Article::all()->sortByDesc('id');
+        $posts = Article::all()->sortByDesc('id');
         
-        return view('toppage.toppage', ['article' => $article]);
+        return view('toppage.toppage', ['posts' => $posts]);
     }
     
     public function article_list(Request $request)
