@@ -41,6 +41,7 @@ Auth::routes();
 
 use App\Http\Controllers\NavController as PublicNavController;
 Route::controller(PublicNavController::class)->group(function() {
+    Route::get('/', 'toppage')->name('toppage');
     Route::get('article/page', 'article_page')->name('article.page');
 });
 

@@ -17,7 +17,9 @@ class NavController extends Controller
     //
     public function toppage(Request $request)
     {   
-        return view('toppage.index');
+        $article = Article::all()->sortByDesc('id');
+        
+        return view('toppage.toppage', ['article' => $article]);
     }
     
     public function article_list(Request $request)
@@ -34,9 +36,9 @@ class NavController extends Controller
             $user = User::find($user_id);
         }
         $id = $request->id;
-        $posts = Article::find($id);
+        $article = Article::find($id);
 
-        return view('article.page', ['posts' => $posts, 'user' => $user]);
+        return view('article.page', ['article' => $article, 'user' => $user]);
     }
     
     public function about()
