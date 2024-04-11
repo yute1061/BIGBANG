@@ -27,21 +27,23 @@
     <body>
         <div class="a">
             <header class="header">
-              <h1><a href="#"><img class="logo" src="images/logo.jpg" alt="チームロゴ"></a></h1>
+              <h1>
+                <a class="team_logo" href="#"><img class="logo" src="images/logo.jpg" alt="チームロゴ"><?php echo "&emsp;"; //「&emsp;」スペース ?>TEAM BIGBANG 熊本ロードバイクチーム</a>
+            　</h1>
               <nav class="h-nav">
                 <ul class="b">
-                  <li><a href="#">menu1</a></li>
-                  <li><a href="#">menu2</a></li>
-                  <li><a href="#">menu3</a></li>
-                  <li><a href="#">menu4</a></li>
-                  <li><a href="#">menu5</a></li>
-                  <li><a href="#">menu6</a></li>
+                  <li><a href="#">ホーム</a></li>
+                  <li><a href="#">BIGBANGについて</a></li>
+                  <li><a href="#">レースレポ</a></li>
+                  <li><a href="#">レース日程</a></li>
+                  <li><a href="#">お問い合わせ</a></li>
                 </ul>
               </nav>  
             </header>
-            <main>
-                @yield('content')
-            </main>
+            <div class="c">
+                @yield('main')
+                @yield('side')
+            </div>
             <footer class="footer">
                 テキスト
             </footer>
