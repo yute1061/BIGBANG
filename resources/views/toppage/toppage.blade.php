@@ -30,8 +30,4 @@
 				@endif
 			@endforeach
     　  </main>
-@endsection   
-
-@section('side')
-        <aside class="side">サイド</aside>
 @endsection

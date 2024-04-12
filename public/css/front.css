@@ -20,11 +20,11 @@ h1 {
 
 .header {
   　position: fixed; /* ヘッダーを固定する */
+  　height: 200px;
   max-width: 1200px;
   top: 0; /* 上部から配置の基準位置を決める */
   margin: 0 auto;
   padding: 0 4%;
-  background-color: #6fb5ff;
 }
 
 .main {
@@ -32,13 +32,6 @@ h1 {
   width: 72%;
   padding: 10px;
   height: 1800px;
-}
-
-.side {
-  width: 22%;
-  margin: 0 auto;
-  padding: 10px;
-  background-color: #ff838b;
 }
 
 .footer {
@@ -53,6 +46,10 @@ h1 {
 .team_logo {
   text-decoration-line: none;
   color: #000000;
+}
+
+.h-nav {
+  width: 100%;
 }
 
 .b {
@@ -79,7 +76,7 @@ h1 {
   text-align: center;
   padding: 12px 0px;
   text-transform: none;
-  color: #1a1a1a;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -88,6 +85,16 @@ h1 {
   max-height: 4000px;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.widgetitle {
+  position: relative;
+  font-size: 16px;
+  padding: 8px 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  background-color: #4d4398;
 }
 
 .h-img {
