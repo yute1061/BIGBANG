@@ -22,3 +22,30 @@
   border-left: none;
   border-radius: 0 3px 3px 0;
 }
+
+.img_profile {
+  width: 60%;
+  height: 60%;
+}
+
+.name {
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.img_meta {
+  padding: 0.5em 0;
+}
+
+.meta {
+  padding: 0.5em 1em;
+  font-size: 0.9em;
+}
+
+.widgettitle .li {
+  display: block;
+  padding: 0.8em 1em;
+  margin: 0;
+  position: relative;
+  font-size: 0.9em;
+}
