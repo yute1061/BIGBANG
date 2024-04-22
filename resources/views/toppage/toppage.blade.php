@@ -17,11 +17,13 @@
 							    <img src="{{ secure_asset('images/no_image.png/') }}" class="img_new_article">
 							@endif
 						</div>
-						<div class="new_article_outline">
-                            <p class="ellipsis">{{ $post->created_at }}</p>
-                            <p class="ellipsis">{{ $post->tag }}</p>
-							<p class="ellipsis">{{ $post->title }}</p>
-							<p class="ellipsis">{{ $post->body }}</p>
+						<div>
+                            <p>{{ $post->created_at }}</p>
+                            <p>{{ $post->tag }}</p>
+							<p>{{ $post->title }}</p>
+						</div>
+						<div>
+							<p>{{ $post->body1 }}</p>
 						</div>
 					</div>
 				</a>

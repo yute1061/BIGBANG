@@ -59,8 +59,7 @@ h1 {
   margin-bottom: 0;
   list-style: none;
   padding: 0;
-  margin-left: auto;
-  margin-right: auto;
+  justify-content: space-evenly;
 }
 
 .b li {
@@ -124,10 +123,4 @@ h1 {
   height: 145px;
   -o-object-fit: cover;
      object-fit: cover; /* width, heightといっしょに使います */
-}
-
-.new_article_outline {
-  width: 200px;
-  float: left;
-  position: relative;
 }

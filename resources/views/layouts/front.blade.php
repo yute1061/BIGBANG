@@ -72,24 +72,22 @@
                   <div id="recent-posts-2" class="widget widget_recent_entries">
                 		<div class="widgettitle">最新記事</div>
           					<?php $count_side=0; ?>
-              		  <ul>
-                			@foreach ($posts as $post)
-                			<?php $count_side++; ?>
-  											<li>
-                  				<a href="{{ route('article.page', ['id' => $post->id]) }}">
-                						<div>
-                              <p class="ellipsis">{{ $post->created_at }}</p>
-                              <p class="ellipsis">{{ $post->tag }}</p>
-                							<p class="ellipsis">{{ $post->title }}</p>
-                							<p class="ellipsis">{{ $post->body }}</p>
-                						</div>
-                  				</a>
-      									</li>
-      									@if ($count_side == 5)
-				                  @break
-			                  @endif
-		                  @endforeach
-		                </ul>
+              			@foreach ($posts as $post)
+              			<?php $count_side++; ?>
+										  <div class="new_article_side">
+                				<a href="{{ route('article.page', ['id' => $post->id]) }}">
+              						<div>
+                            <p class="ellipsis">{{ $post->created_at }}</p>
+                            <p class="ellipsis">{{ $post->tag }}</p>
+              							<p class="ellipsis">{{ $post->title }}</p>
+              							<p class="ellipsis">{{ $post->body }}</p>
+              						</div>
+                				</a>
+                			</div>
+    									@if ($count_side == 5)
+			                  @break
+		                  @endif
+	                  @endforeach
               		</div>
                   <div>
                     <div class="widgettitle">カテゴリー</div>
