@@ -92,6 +92,12 @@
                   <div>
                     <div class="widgettitle">カテゴリー</div>
                   </div>
+                  <div>
+                    <div class="widgettitle">X（エックス）</div>
+                      <a class="twitter-timeline" data-height="600" href="https://twitter.com/silencetezuka?ref_src=twsrc%5Etfw">Tweets by silencetezuka</a> 
+                      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div> 
+                  </div>
                 </aside>
             </div>
         </div>
