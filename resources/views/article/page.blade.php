@@ -1,8 +1,9 @@
-@extends('layouts.admin')
+@extends('layouts.front')
 
 @section('title', $article->title)
 
-@section('content')
+@section('main')
+<main id="main" class="main" itemscope="" itemtype="https://schema.org/Blog" style="height: auto !important;">
     <div class="wrap">
         <div class="review_pankuzu">
             <a>{{ $article->tag }}</a>
@@ -127,4 +128,5 @@
             </tr>
         </table>
     </div>
+</main>
 @endsection

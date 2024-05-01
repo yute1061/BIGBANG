@@ -27,7 +27,7 @@
         
     </head>
     <body>
-        <div class="a">
+        <div class="area">
             <header class="header">
               <h1>
                 <a class="team_logo" href="#"><img class="logo" src="images/logo.jpg" alt="チームロゴ"><?php echo "&emsp;"; //「&emsp;」スペース ?>TEAM BIGBANG 熊本ロードバイクチーム</a>
@@ -94,9 +94,6 @@
                   </div>
                 </aside>
             </div>
-            <footer class="footer">
-                テキスト
-            </footer>
         </div>
     </body>
 </html>

@@ -43,7 +43,7 @@
                                 <tr>
                                     <th>{{ $article->id }}</th>
                                     <td><a href="{{ route('article.page', ['id' => $article->id]) }}">{{ Str::limit($article->title, 50) }}</a></td>
-                                    <td>{{ Str::limit($article->body1, 250) }}</td>
+                                    <td>{{ $article->body1 }}</td>
                                     <td>
                                         <div>
                                             <a href="{{ route('admin.article.edit', ['id' => $article->id]) }}">編集</a>

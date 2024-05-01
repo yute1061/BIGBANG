@@ -37,8 +37,9 @@ class NavController extends Controller
         }
         $id = $request->id;
         $article = Article::find($id);
+        $posts = Article::all()->sortByDesc('id');
 
-        return view('article.page', ['article' => $article, 'user' => $user]);
+        return view('article.page', ['article' => $article, 'user' => $user, 'posts' => $posts]);
     }
     
     public function about()
