@@ -16,6 +16,7 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/admin.scss', 'public/css')
     .sass('resources/sass/profile.scss', 'public/css')
     .sass('resources/sass/front.scss', 'public/css') 
+    .sass('resources/sass/page.scss', 'public/css') 
     .sass('resources/sass/side.scss', 'public/css') 
     .sass('resources/sass/front_cycletv.scss', 'public/css')
     .sourceMaps();
