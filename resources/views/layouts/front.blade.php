@@ -101,7 +101,7 @@
                     </div>
                 </aside>
             </div>
-            <footer id="footer">
+            <footer class="footer">
       				  <div class="footer_content clearfix">
       					    <nav class="footer_navi" role="navigation">
       						      <ul id="menu-%e3%83%95%e3%83%83%e3%82%bf%e3%83%bc%e3%83%a1%e3%83%8b%e3%83%a5%e3%83%bc" class="menu">

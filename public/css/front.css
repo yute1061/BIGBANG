@@ -153,6 +153,11 @@
   padding: 15px 0;
 }
 
+.clearfix, .cf {
+  zoom: 1;
+  display: block;
+}
+
 .footer_navi {
   display: inline-block;
 }

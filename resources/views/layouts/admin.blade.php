@@ -23,6 +23,10 @@
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         {{-- 固有のCSSを読み込みます --}}
         <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('css/front.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('css/side.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('css/page.css') }}" rel="stylesheet">
+        
     </head>
     <body>
         <div id="app">
@@ -73,10 +77,9 @@
                 </div>
             </nav>
             {{-- ここまでナビゲーションバー --}}
-            
-            <main>
-                @yield('content')
-            </main>
+        
+            @yield('content')
+                
         </div>
     </body>
 </html>
