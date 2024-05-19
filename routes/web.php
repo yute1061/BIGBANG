@@ -24,6 +24,7 @@ Route::controller(ArticleController::class)->prefix('admin')->name('admin.')->mi
     Route::post('article/preview', 'preview')->name('article.preview'); 
     Route::get('article', 'index')->name('article.index');
     Route::get('article/edit', 'edit')->name('article.edit');
+    Route::post('article/edit_preview', 'edit_preview')->name('article.edit_preview'); 
     Route::post('article/edit', 'update')->name('article.update');
     Route::get('article/delete', 'delete')->name('article.delete');
 });

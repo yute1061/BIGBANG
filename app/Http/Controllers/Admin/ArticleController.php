@@ -128,7 +128,6 @@ class ArticleController extends Controller
         $article->fill($form);
         $article->save();
         
-        // admin/article/createにリダイレクトする
         return view('admin.article.preview', ['article' => $article]);
     }
     
@@ -136,7 +135,8 @@ class ArticleController extends Controller
     {
         $user = Auth::user();
         $article = Article::find($request->id);
-
+        $article->status = 1;
+        
         $article->user_id = $user->id;
         $article->user_name = $user->name;
         
@@ -171,8 +171,8 @@ class ArticleController extends Controller
     
     public function update(Request $request)
     {
-        // Validationをかける
         $this->validate($request, Article::$rules);
+        
         // Article Modelから編集前のデータを取得する
         $article = Article::find($request->id);
         // 送信されてきたフォームデータを格納する
@@ -310,7 +310,8 @@ class ArticleController extends Controller
         $history->edited_at = Carbon::now();
         $history->save();
 
-        return redirect('admin/article');
+        return view('admin.article.preview', ['article' => $article]);
+        // return redirect('admin/article');
     }
     
     public function delete(Request $request)

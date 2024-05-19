@@ -3,7 +3,7 @@
 @section('title', $article->title)
 
 @section('main')
-<main id="main" class="main" itemscope="" itemtype="https://schema.org/Blog" style="height: auto !important;">
+<main id="main" class="main" itemscope="" itemtype="https://schema.org/Blog">
     <div class="article_pankuzu">
         <a>{{ $article->tag }}</a>
         <a> > </a>

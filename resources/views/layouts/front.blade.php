@@ -31,7 +31,7 @@
         <div class="area">
             <header class="header">
                 <h1>
-                    <a class="team_logo" href="#"><img class="logo" src="images/logo.jpg" alt="チームロゴ"><?php echo "&emsp;"; //「&emsp;」スペース ?>TEAM BIGBANG 熊本ロードバイクチーム</a>
+                    <a class="team_logo" href="{{ route('toppage') }}"><img class="logo" src="{{ secure_asset('images/logo.jpg/') }}" alt="チームロゴ"><?php echo "&emsp;"; //「&emsp;」スペース ?>TEAM BIGBANG 熊本ロードバイクチーム</a>
               　</h1>
                 <nav class="h-nav">
                     <ul class="b">

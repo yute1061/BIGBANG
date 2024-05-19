@@ -42,7 +42,7 @@
                             @foreach($posts as $article)
                                 <tr>
                                     <th>{{ $article->id }}</th>
-                                    <td><a href="{{ route('article.page', ['id' => $article->id]) }}">{{ Str::limit($article->title, 50) }}</a></td>
+                                    <td><a href="{{ route('article.page', ['id' => $article->id]) }}">{{ Str::limit($article->title, 100) }}</a></td>
                                     <td>{{ $article->body1 }}</td>
                                     <td>
                                         <div>

@@ -33,41 +33,43 @@
 	</div> -->
 	<?php $count=0; ?>
 	@foreach ($posts as $post)
-		<?php $count++; ?>
-		<a href="{{ route('article.page', ['id' => $post->id]) }}">
-			<div class="new_article">
-				<div class="new_article_thumbnail">
-					@if ($post->thumbnail_path != null)
-						<img src="{{ secure_asset('storage/image/' . $post->thumbnail_path) }}" class="img_new_article">
-					@else
-					    <img src="{{ secure_asset('images/no_image.png/') }}" class="img_new_article">
-					@endif
-				</div>
-				<!-- <div class="entry-card-content card-content e-card-content"> -->
-				<div class="entry-card-content">
-					<!-- <h2 class="entry-card-title card-title e-card-title" itemprop="headline">{{ $post->title }}</h2> -->
-					<h2 class="entry-card-title">{{ $post->title }}</h2>
-					<!-- <div class="entry-card-snippet card-snippet e-card-snippet"> -->
-					<div class="entry-card-snippet">
-						{{ $post->body1 }}
+		@if ($post->status == 1)
+			<?php $count++; ?>
+			<a href="{{ route('article.page', ['id' => $post->id]) }}">
+				<div class="new_article">
+					<div class="new_article_thumbnail">
+						@if ($post->thumbnail_path != null)
+							<img src="{{ secure_asset('storage/image/' . $post->thumbnail_path) }}" class="img_new_article">
+						@else
+						    <img src="{{ secure_asset('images/no_image.png/') }}" class="img_new_article">
+						@endif
 					</div>
+					<!-- <div class="entry-card-content card-content e-card-content"> -->
+					<div class="entry-card-content">
+						<!-- <h2 class="entry-card-title card-title e-card-title" itemprop="headline">{{ $post->title }}</h2> -->
+						<h2 class="entry-card-title">{{ $post->title }}</h2>
+						<!-- <div class="entry-card-snippet card-snippet e-card-snippet"> -->
+						<div class="entry-card-snippet">
+							{{ $post->body1 }}
+						</div>
+					</div>
+					<!-- <div class="entry-card-meta card-meta e-card-meta"> -->
+					<div class="entry-card-meta">
+						<!-- <div class="entry-card-info e-card-info"> -->
+		        		<div class="entry-card-info">
+		                	<span class="post-date">
+		                		<span class="fa fa-clock-o" aria-hidden="true"></span>
+		                		<span class="entry-date">{{ $post->created_at }}</span>
+	            			</span>
+	                    </div>
+	                    <!-- <div class="entry-card-categorys e-card-categorys"> -->
+		        		<div class="entry-card-categorys">
+	        				<span class="entry-category">{{ $post->tag }}</span>
+	        			</div>
+		    		</div>
 				</div>
-				<!-- <div class="entry-card-meta card-meta e-card-meta"> -->
-				<div class="entry-card-meta">
-					<!-- <div class="entry-card-info e-card-info"> -->
-	        		<div class="entry-card-info">
-	                	<span class="post-date">
-	                		<span class="fa fa-clock-o" aria-hidden="true"></span>
-	                		<span class="entry-date">{{ $post->created_at }}</span>
-            			</span>
-                    </div>
-                    <!-- <div class="entry-card-categorys e-card-categorys"> -->
-	        		<div class="entry-card-categorys">
-        				<span class="entry-category">{{ $post->tag }}</span>
-        			</div>
-	    		</div>
-			</div>
-		</a>
+			</a>
+		@endif
 		@if ($count == 10)
 			@break
 		@endif

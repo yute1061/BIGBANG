@@ -18,6 +18,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="image1">サムネ画像</label>
                         <div class="col-md-10">
+                            <img width="800" height="533" src="{{ secure_asset('storage/image/' . $article_form->thumbnail_path) }}" class="img-review">
                             <input type="file" class="form-control-file" name="thumbnail">
                             <div class="form-text text-info">
                                 設定中: {{ $article_form->thumbnail_path }}
@@ -50,6 +51,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="image1">画像①</label>
                         <div class="col-md-10">
+                            <img width="800" height="533" src="{{ secure_asset('storage/image/' . $article_form->image_path1) }}" class="img-review">
                             <input type="file" class="form-control-file" name="image1">
                             <div class="form-text text-info">
                                 設定中: {{ $article_form->image_path1 }}
@@ -70,6 +72,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="image2">画像②</label>
                         <div class="col-md-10">
+                            <img width="800" height="533" src="{{ secure_asset('storage/image/' . $article_form->image_path2) }}" class="img-review">
                             <input type="file" class="form-control-file" name="image2">
                             <div class="form-text text-info">
                                 設定中: {{ $article_form->image_path2 }}
@@ -90,6 +93,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="image3">画像③</label>
                         <div class="col-md-10">
+                            <img width="800" height="533" src="{{ secure_asset('storage/image/' . $article_form->image_path3) }}" class="img-review">
                             <input type="file" class="form-control-file" name="image3">
                             <div class="form-text text-info">
                                 設定中: {{ $article_form->image_path3 }}
@@ -110,6 +114,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="image4">画像④</label>
                         <div class="col-md-10">
+                            <img width="800" height="533" src="{{ secure_asset('storage/image/' . $article_form->image_path4) }}" class="img-review">
                             <input type="file" class="form-control-file" name="image4">
                             <div class="form-text text-info">
                                 設定中: {{ $article_form->image_path4 }}
@@ -130,6 +135,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="image5">画像⑤</label>
                         <div class="col-md-10">
+                            <img width="800" height="533" src="{{ secure_asset('storage/image/' . $article_form->image_path5) }}" class="img-review">
                             <input type="file" class="form-control-file" name="image5">
                             <div class="form-text text-info">
                                 設定中: {{ $article_form->image_path5 }}
@@ -150,6 +156,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="image6">画像⑥</label>
                         <div class="col-md-10">
+                            <img width="800" height="533" src="{{ secure_asset('storage/image/' . $article_form->image_path6) }}" class="img-review">
                             <input type="file" class="form-control-file" name="image6">
                             <div class="form-text text-info">
                                 設定中: {{ $article_form->image_path6 }}
@@ -170,6 +177,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="image7">画像⑦</label>
                         <div class="col-md-10">
+                            <img width="800" height="533" src="{{ secure_asset('storage/image/' . $article_form->image_path7) }}" class="img-review">
                             <input type="file" class="form-control-file" name="image7">
                             <div class="form-text text-info">
                                 設定中: {{ $article_form->image_path7 }}
@@ -190,6 +198,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="image8">画像⑧</label>
                         <div class="col-md-10">
+                            <img width="800" height="533" src="{{ secure_asset('storage/image/' . $article_form->image_path8) }}" class="img-review">
                             <input type="file" class="form-control-file" name="image8">
                             <div class="form-text text-info">
                                 設定中: {{ $article_form->image_path8 }}
@@ -210,6 +219,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="image9">画像⑨</label>
                         <div class="col-md-10">
+                            <img width="800" height="533" src="{{ secure_asset('storage/image/' . $article_form->image_path9) }}" class="img-review">
                             <input type="file" class="form-control-file" name="image9">
                             <div class="form-text text-info">
                                 設定中: {{ $article_form->image_path9 }}
@@ -230,6 +240,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="image10">画像⑩</label>
                         <div class="col-md-10">
+                            <img width="800" height="533" src="{{ secure_asset('storage/image/' . $article_form->image_path10) }}" class="img-review">
                             <input type="file" class="form-control-file" name="image10">
                             <div class="form-text text-info">
                                 設定中: {{ $article_form->image_path10 }}
