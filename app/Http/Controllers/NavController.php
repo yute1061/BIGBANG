@@ -51,7 +51,8 @@ class NavController extends Controller
     
     public function about()
     {   
-        return view('about.index');
+        $posts = Article::all()->sortByDesc('id');
+        return view('about.about', ['posts' => $posts]);
     }
     
     public function contact()

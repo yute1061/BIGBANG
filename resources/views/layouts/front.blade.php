@@ -36,7 +36,7 @@
                 <nav class="h-nav">
                     <ul class="b">
                         <li><a href="#">ホーム</a></li>
-                        <li><a href="#">BIGBANGについて</a></li>
+                        <li><a href="{{ route('about') }}">BIGBANGについて</a></li>
                         <li><a href="#">レースレポ</a></li>
                         <li><a href="#">レース日程</a></li>
                         <li><a href="#">お問い合わせ</a></li>
