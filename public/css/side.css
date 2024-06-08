@@ -56,7 +56,51 @@
   margin: 1em auto;
   background: #fff7f9; /* 背景色 */
   border: 2px dashed #f79eb6; /* 線の色 */
-  box-shadow: 2px 2px 2px #ccc; /* 影の色 */
+  position: relative;
+}
+
+.new_article_thumbnail-side {
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+
+.entry-card-content-side {
+  margin-left: 110px;
+  padding-bottom: 1.2em;
+}
+
+.entry-card-title-side {
+  margin: 0 0 5px 0;
+  line-height: 1.6;
+  font-weight: 300;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.entry-card-meta-side {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  line-height: 1;
+}
+
+.entry-card-info-side {
+  padding: 2px;
+}
+
+.post-date-side, .post-update, .post-author, .amp-back, .entry-category-side {
+  padding: 2px;
+  display: inline;
+  font-size: 0.7em;
+}
+
+.entry-date-side {
+  font-size: 0.7em;
+  margin-left: 3px;
 }
 
 .timeline {

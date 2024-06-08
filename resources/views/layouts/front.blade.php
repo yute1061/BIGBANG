@@ -23,17 +23,23 @@
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         {{-- 固有のCSSを読み込みます --}}
         <link href="{{ secure_asset('css/front.css') }}" rel="stylesheet">
-        <link href="{{ secure_asset('css/side.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('css/toppage.css') }}" rel="stylesheet">
         <link href="{{ secure_asset('css/page.css') }}" rel="stylesheet">
         
     </head>
     <body>
         <div class="area">
             <header class="header">
-                <h1>
-                    <a class="team_logo" href="{{ route('toppage') }}"><img class="logo" src="{{ secure_asset('images/logo.jpg/') }}" alt="チームロゴ"><?php echo "&emsp;"; //「&emsp;」スペース ?>TEAM BIGBANG 熊本ロードバイクチーム</a>
-              　</h1>
-                <nav class="h-nav">
+                <div>
+                    <a class="team_logo" href="{{ route('toppage') }}" style="font-weight: bold;">
+                        <img class="logo" src="{{ secure_asset('images/logo.jpg/') }}" alt="チームロゴ">
+                        <?php echo "&emsp;"; //「&emsp;」スペース ?>
+                        <div style="margin-top: 50px;">
+                            <span style="font-size: 40px;">TEAM BIGBANG 熊本ロードバイクチーム</span>
+                        </div>
+                    </a>
+              　</div>
+                <nav style="clear:both;" class="h-nav">
                     <ul class="b">
                         <li><a href="#">ホーム</a></li>
                         <li><a href="{{ route('about') }}">BIGBANGについて</a></li>
@@ -55,44 +61,59 @@
                             </button>
                         </form>
                     </div>
-                    <div>
-                        <div class="widgettitle">サイト管理者</div>
-                        <div class="diver_widget_profile clearfix">
-                            <div class="clearfix coverimg on lazyloaded">
-                                <img class="img_profile" src="{{ secure_asset('images/profile.jpg/') }}" class="img_new_article">
-                            </div>
-                            <div class="name">テズカ</div>
-                            <div class="img_meta">
-                                <div class="meta">
-                                    <p>2019年よりTEAM BIGBANGに所属。一応ロードバイク歴10年。最近はブルべに夢中でレース活動は控え気味...でもヒルクライムとエンデューロには出たいと思ってます。目下の目標はSR取得で、2027年のPBP出場を目指してます。</p>
-                                    <p>愛車はチームメイトに塗装してもらったSTORCK Fascenario.3 comp。マイナーなブランドやアイテムを使いたがる癖あり。</p>
-                                </div>
+                    
+                    <div class="widgettitle">サイト管理者</div>
+                    <div class="diver_widget_profile clearfix">
+                        <div class="clearfix coverimg on lazyloaded">
+                            <img class="img_profile" src="{{ secure_asset('images/profile.jpg/') }}" class="img_new_article">
+                        </div>
+                        <div class="name">テズカ</div>
+                        <div class="img_meta">
+                            <div class="meta">
+                                <p>2019年よりTEAM BIGBANGに所属。一応ロードバイク歴10年。最近はブルべに夢中でレース活動は控え気味...でもヒルクライムとエンデューロには出たいと思ってます。目下の目標はSR取得で、2027年のPBP出場を目指してます。</p>
+                                <p>愛車はチームメイトに塗装してもらったSTORCK Fascenario.3 comp。マイナーなブランドやアイテムを使いたがる癖あり。</p>
                             </div>
                         </div>
-                    <div>
-                    <div id="recent-posts-2" class="widget widget_recent_entries">
-                    		<div class="widgettitle">最新記事</div>
-              					<?php $count_side=0; ?>
-                  			@foreach ($posts as $post)
-                  			<?php $count_side++; ?>
-      										  <div class="new_article_side">
-                        				<a href="{{ route('article.page', ['id' => $post->id]) }}">
-                        						<div>
-                                        <p class="ellipsis">{{ $post->created_at }}</p>
-                                        <p class="ellipsis">{{ $post->tag }}</p>
-                          							<p class="ellipsis">{{ $post->title }}</p>
-                          							<p class="ellipsis">{{ $post->body }}</p>
-                        						</div>
-                        				</a>
-                      			</div>
-          									@if ($count_side == 5)
-      			                    @break
-      		                  @endif
-    	                  @endforeach
-                		</div>
-                    <div>
-                        <div class="widgettitle">カテゴリー</div>
                     </div>
+                    
+        		    <div class="widgettitle">最新記事</div>
+        		    <div>
+  				        <?php $count_side=0; ?>
+  			            @foreach ($posts as $post)
+      			            <?php $count_side++; ?>
+            				<a href="{{ route('article.page', ['id' => $post->id]) }}">
+  							    <div class="new_article_side">
+        						    <div class="new_article_thumbnail-side">
+                						@if ($post->thumbnail_path != null)
+                							<img width="100%" height="96%" src="{{ secure_asset('storage/image/' . $post->thumbnail_path) }}" class="img_new_article">
+                						@else
+                						    <img width="100%" height="96%" src="{{ secure_asset('images/no_image.png/') }}" class="img_new_article">
+                						@endif
+                					</div>
+                					<div class="entry-card-content-side">
+                    					<span class="entry-card-title-side">{{ $post->title }}</span>
+                    				</div>
+                					<div class="entry-card-meta-side">
+                		        		<div class="entry-card-info-side">
+                		        		    <span class="post-date-side">
+                		                	    <span class="entry-date-side">{{ $post->created_at }}</span>
+                		                	</span>
+                	                    </div>
+                	                    <!-- <div class="entry-card-categorys e-card-categorys"> -->
+                		        		<div class="entry-card-categorys-side">
+                	        				<span class="entry-category-side">{{ $post->tag }}</span>
+                	        			</div>
+                		    		</div>
+            					</div>
+                			</a>
+  							@if ($count_side == 5)
+  		                        @break
+  		                    @endif
+                        @endforeach
+                    </div>
+        		    
+                    <div class="widgettitle">カテゴリー</div>
+                
                     <div>
                         <div class="widgettitle">X（エックス）</div>
                             <a class="twitter-timeline" data-height="600" href="https://twitter.com/silencetezuka?ref_src=twsrc%5Etfw">Tweets by silencetezuka</a> 
