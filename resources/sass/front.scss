@@ -42,7 +42,7 @@
   margin-top: 36px;
   margin-right: 20px;
   margin-bottom: 5px;
-  float: left;
+  float: left; //divを横並びにする　clear:bothで解除
 }
 
 .header {
@@ -291,7 +291,7 @@ article {
     background: #fff7f9; /* 背景色 */
     border: 2px dashed #f79eb6; /* 線の色 */
     //box-shadow: 2px 2px 2px #ccc; /* 影の色 */
-    position: relative;
+    position: relative; //子要素に position: absolute; を設定して希望の場所に配置する
 }
 
 .new_article_thumbnail-side {
@@ -317,7 +317,7 @@ article {
 
 .entry-card-meta-side {
     bottom: 0;
-    position: absolute;
+    position: absolute; //親要素に position: lerative; を設定して希望の場所に配置する
     right: 0;
     text-align: right;
     line-height: 1;
