@@ -30,18 +30,22 @@
     <body>
         <div class="area">
             <header class="header">
-                <div>
-                    <a class="team_logo" href="{{ route('toppage') }}" style="font-weight: bold;">
-                        <img class="logo" src="{{ secure_asset('images/logo.jpg/') }}" alt="チームロゴ">
-                        <?php echo "&emsp;"; //「&emsp;」スペース ?>
-                        <div style="margin-top: 50px;">
-                            <span style="font-size: 40px;">TEAM BIGBANG 熊本ロードバイクチーム</span>
+                <a class="title" href="{{ route('toppage') }}" style="font-weight: bold;">                     
+                    <div>
+                        <div style="float: left;" {{--text-align: center;--}}>
+                            <div><span style="font-size: 50px;">T&nbsp;E&nbsp;A&nbsp;M</span>&emsp;{{--全角スペース--}}<span style="font-size: 70px;">B&nbsp;I&nbsp;G&nbsp;B&nbsp;A&nbsp;N&nbsp;G</span></div>
+                            <div style="margin-top: -20px;"><span style="font-size: 30px;">RoadraceTeam in Kumamoto</span></div>
                         </div>
-                    </a>
-              　</div>
-                <nav style="clear:both;" class="h-nav">
+                        <div>
+                            <img class="logo_2" style="margin-left: 220px; width: 80px; margin-top: 57px;" src="{{ secure_asset('images/935503.jpeg/') }}">
+                            <img class="logo_2" style="width: 110px; margin-top: 28px;" src="{{ secure_asset('images/935503.jpeg/') }}">
+                            <img class="logo_2" style="width: 140px;" src="{{ secure_asset('images/935503.jpeg/') }}">
+                        </div>
+                    </div>
+                </a>
+                <nav class="h-nav">
                     <ul class="b">
-                        <li><a href="#">ホーム</a></li>
+                        <li><a href="#">HOME</a></li>
                         <li><a href="{{ route('about') }}">BIGBANGについて</a></li>
                         <li><a href="#">レースレポ</a></li>
                         <li><a href="#">レース日程</a></li>
@@ -52,6 +56,9 @@
             <div class="c">
                 @yield('main')
                 <aside class="side">
+                    <div>
+                        <img width="100%" height="100%" src="{{ secure_asset('images/logo.jpg/') }}">
+                    </div>
                     <div>
                         <div class="widgettitle">記事検索</div>
                         <form method="get" class="searchform" action="###########" role="search">
@@ -197,8 +204,7 @@
                             </li>
                         </ul>					
                     </nav>
-      					    <div id="copyright">2013-2023 ブルベ人 All Rights Reserved.</div>
-      				  </div>
+      			    <div id="copyright">2014-2024 TEAM BIGBANG</div>
       			</footer>
         </div>
     </body>
