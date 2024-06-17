@@ -12,9 +12,9 @@
 				<div class="new_article">
 					<div class="new_article_thumbnail">
 						@if ($post->thumbnail_path != null)
-							<img width="95%" height="98%" src="{{ secure_asset('storage/image/' . $post->thumbnail_path) }}" class="img_new_article">
+							<img width="95%" height="100%" src="{{ secure_asset('storage/image/' . $post->thumbnail_path) }}" class="img_new_article">
 						@else
-						    <img width="95%" height="98%" src="{{ secure_asset('images/no_image.png/') }}" class="img_new_article">
+						    <img width="95%" height="100%" src="{{ secure_asset('images/no_image.png/') }}" class="img_new_article">
 						@endif
 					</div>
 					<!-- <div class="entry-card-content card-content e-card-content"> -->

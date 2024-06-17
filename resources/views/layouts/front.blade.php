@@ -33,7 +33,7 @@
                 <a class="title" href="{{ route('toppage') }}" style="font-weight: bold;">                     
                     <div>
                         <div style="float: left;" {{--text-align: center;--}}>
-                            <div><span style="font-size: 50px;">T&nbsp;E&nbsp;A&nbsp;M</span>&emsp;{{--全角スペース--}}<span style="font-size: 70px;">B&nbsp;I&nbsp;G&nbsp;B&nbsp;A&nbsp;N&nbsp;G</span></div>
+                            <div><span style="font-size: 50px;">T&nbsp;E&nbsp;A&nbsp;M</span>&emsp;&emsp;{{--全角スペース--}}<span style="font-size: 70px;">B&nbsp;I&nbsp;G&nbsp;B&nbsp;A&nbsp;N&nbsp;G</span></div>
                             <div style="margin-top: -20px;"><span style="font-size: 30px;">RoadraceTeam in Kumamoto</span></div>
                         </div>
                         <div>
@@ -57,7 +57,7 @@
                 @yield('main')
                 <aside class="side">
                     <div>
-                        <img width="100%" height="100%" src="{{ secure_asset('images/logo.jpg/') }}">
+                        <img width="100%" src="{{ secure_asset('images/Screen_BIGBANG_2700×2700-min.png/') }}">
                     </div>
                     <div>
                         <div class="widgettitle">記事検索</div>
@@ -92,9 +92,9 @@
   							    <div class="new_article_side">
         						    <div class="new_article_thumbnail-side">
                 						@if ($post->thumbnail_path != null)
-                							<img width="100%" height="96%" src="{{ secure_asset('storage/image/' . $post->thumbnail_path) }}" class="img_new_article">
+                							<img width="100%" height="100%" src="{{ secure_asset('storage/image/' . $post->thumbnail_path) }}" class="img_new_article">
                 						@else
-                						    <img width="100%" height="96%" src="{{ secure_asset('images/no_image.png/') }}" class="img_new_article">
+                						    <img width="100%" height="100%" src="{{ secure_asset('images/no_image.png/') }}" class="img_new_article">
                 						@endif
                 					</div>
                 					<div class="entry-card-content-side">
@@ -120,66 +120,80 @@
                     </div>
         		    
                     <div class="widgettitle">カテゴリー</div>
-                    <div>
-                        <span>レースレポ</span>
-                        <?php $category_count_side_1=0; ?>
-                        @foreach ($posts as $post)
-                            @if ($post->tag == "レースレポ")
-                                <?php $category_count_side_1++; ?>
-                            @endif
-                        @endforeach
-                        <span>{{ $category_count_side_1 }}</span>
-                    </div>
-                    <div>
-                        <span>練習会</span>
-                        <?php $category_count_side_2 = 0; ?>
-                        @foreach ($posts as $post)
-                            @if ($post->tag == "練習会")
-                                <?php $category_count_side_2++; ?>
-                            @endif
-                        @endforeach
-                        <span>{{ $category_count_side_2 }}</span>
-                    </div>
-                    <div>
-                        <span>機材レビュー</span>
-                        <?php $category_count_side_3 = 0; ?>
-                        @foreach ($posts as $post)
-                            @if ($post->tag == "機材レビュー")
-                                <?php $category_count_side_3++; ?>
-                            @endif
-                        @endforeach
-                        <span>{{ $category_count_side_3 }}</span>
-                    </div>
-                    <div>
-                        <span>用品レビュー</span>
-                        <?php $category_count_side_4 = 0; ?>
-                        @foreach ($posts as $post)
-                            @if ($post->tag == "用品レビュー")
-                                <?php $category_count_side_4++; ?>
-                            @endif
-                        @endforeach
-                        <span>{{ $category_count_side_4 }}</span>
-                    </div>
-                    <div>
-                        <span>ブルベ</span>
-                        <?php $category_count_side_5 = 0; ?>
-                        @foreach ($posts as $post)
-                            @if ($post->tag == "ブルベ")
-                                <?php $category_count_side_5++; ?>
-                            @endif
-                        @endforeach
-                        <span>{{ $category_count_side_5 }}</span>
-                    </div>
-                    <div>
-                        <span>その他</span>
-                        <?php $category_count_side_etc = 0; ?>
-                        @foreach ($posts as $post)
-                            @if ($post->tag == "その他")
-                                <?php $category_count_side_etc++; ?>
-                            @endif
-                        @endforeach
-                        <span>{{ $category_count_side_etc }}</span>
-                    </div>
+                    <ul>
+                        <li class="category">
+                            <a href="#">
+                                <span class="category_name">レースレポ</span>
+                                <?php $category_count_side_1=0; ?>
+                                @foreach ($posts as $post)
+                                    @if ($post->tag == "レースレポ")
+                                        <?php $category_count_side_1++; ?>
+                                    @endif
+                                @endforeach
+                                <span class="category_count">{{ $category_count_side_1 }}</span>
+                            </a>
+                        </li>
+                        <li class="category">
+                            <a href="#">
+                                <span class="category">練習会</span>
+                                <?php $category_count_side_2 = 0; ?>
+                                @foreach ($posts as $post)
+                                    @if ($post->tag == "練習会")
+                                        <?php $category_count_side_2++; ?>
+                                    @endif
+                                @endforeach
+                                <span class="category_count">{{ $category_count_side_2 }}</span>
+                            </a>
+                        </li>
+                        <li class="category">
+                            <a href="#">
+                                <span class="category">機材レビュー</span>
+                                <?php $category_count_side_3 = 0; ?>
+                                @foreach ($posts as $post)
+                                    @if ($post->tag == "機材レビュー")
+                                        <?php $category_count_side_3++; ?>
+                                    @endif
+                                @endforeach
+                                <span class="category_count">{{ $category_count_side_3 }}</span>
+                            </a>
+                        </li>
+                        <li class="category">
+                            <a href="#">
+                                <span class="category">用品レビュー</span>
+                                <?php $category_count_side_4 = 0; ?>
+                                @foreach ($posts as $post)
+                                    @if ($post->tag == "用品レビュー")
+                                        <?php $category_count_side_4++; ?>
+                                    @endif
+                                @endforeach
+                                <span class="category_count">{{ $category_count_side_4 }}</span>
+                            </a>
+                        </li>
+                        <li class="category">
+                            <a href="#">
+                                <span class="category">ブルベ</span>
+                                <?php $category_count_side_5 = 0; ?>
+                                @foreach ($posts as $post)
+                                    @if ($post->tag == "ブルベ")
+                                        <?php $category_count_side_5++; ?>
+                                    @endif
+                                @endforeach
+                                <span class="category_count">{{ $category_count_side_5 }}</span>
+                            </a>
+                        </li>
+                        <li class="category">
+                            <a href="#">
+                                <span class="category">その他</span>
+                                <?php $category_count_side_etc = 0; ?>
+                                @foreach ($posts as $post)
+                                    @if ($post->tag == "その他")
+                                        <?php $category_count_side_etc++; ?>
+                                    @endif
+                                @endforeach
+                                <span class="category_count">{{ $category_count_side_etc }}</span>
+                            </a>
+                        </li>
+                    </ul>
                 
                     <div>
                         <div class="widgettitle">X（エックス）</div>

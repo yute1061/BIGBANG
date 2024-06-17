@@ -92,6 +92,11 @@
   margin: 0 auto;
 }
 
+.c a {
+  color: #000000;
+  text-decoration: none;
+}
+
 .h-img {
   max-height: 400px;
   min-width: 864px;
@@ -262,7 +267,7 @@ article {
   height: 100px;
   margin: 1em auto;
   background: #f5f5f5; /* 背景色 */
-  border: 2px dashed #a9a9a9; /* 線の色 */
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
   position: relative;
 }
 
@@ -307,6 +312,17 @@ article {
 .entry-date-side {
   font-size: 0.7em;
   margin-left: 3px;
+}
+
+.category {
+  height: 50px;
+  font-size: 20px;
+}
+
+.category_count {
+  display: block;
+  float: right;
+  margin-right: 40px;
 }
 
 .timeline {
