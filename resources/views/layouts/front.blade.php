@@ -34,7 +34,7 @@
                     <div>
                         <div style="float: left;" {{--text-align: center;--}}>
                             <div><span style="font-size: 50px;">T&nbsp;E&nbsp;A&nbsp;M</span>&emsp;&emsp;{{--全角スペース--}}<span style="font-size: 70px;">B&nbsp;I&nbsp;G&nbsp;B&nbsp;A&nbsp;N&nbsp;G</span></div>
-                            <div style="margin-top: -20px;"><span style="font-size: 30px;">RoadraceTeam in Kumamoto</span></div>
+                            <div style="margin-top: -20px;"><span style="font-size: 30px;">Roadrace&nbsp;Team&nbsp;in&nbsp;Kumamoto</span></div>
                         </div>
                         <div>
                             <img class="logo_2" style="margin-left: 220px; width: 80px; margin-top: 57px;" src="{{ secure_asset('images/935503.jpeg/') }}">
@@ -45,7 +45,7 @@
                 </a>
                 <nav class="h-nav">
                     <ul class="b">
-                        <li><a href="#">HOME</a></li>
+                        <li><a href="{{ route('toppage') }}">HOME</a></li>
                         <li><a href="{{ route('about') }}">BIGBANGについて</a></li>
                         <li><a href="#">レースレポ</a></li>
                         <li><a href="#">レース日程</a></li>
@@ -61,8 +61,9 @@
                     </div>
                     <div>
                         <div class="widgettitle">記事検索</div>
-                        <form method="get" class="searchform" action="###########" role="search">
-                          	<input type="text" placeholder="検索" name="s" class="s">
+                        <form action="{{ route('toppage') }}" method="get" class="searchform" role="search">
+                          	<input type="text" placeholder="検索" name="search" value="{{ old('search') }}">
+                          	<input type="hidden" name="mode" value=1><!--検索したときはtoppage表示のモードを変える-->
                           	<button type="submit">
                                       {{ __('検索') }}
                             </button>
@@ -86,7 +87,7 @@
         		    <div class="widgettitle">最新記事</div>
         		    <div>
   				        <?php $count_side=0; ?>
-  			            @foreach ($posts as $post)
+  			            @foreach ($all as $post)
       			            <?php $count_side++; ?>
             				<a href="{{ route('article.page', ['id' => $post->id]) }}">
   							    <div class="new_article_side">
@@ -125,7 +126,7 @@
                             <a href="#">
                                 <span class="category_name">レースレポ</span>
                                 <?php $category_count_side_1=0; ?>
-                                @foreach ($posts as $post)
+                                @foreach ($all as $post)
                                     @if ($post->tag == "レースレポ")
                                         <?php $category_count_side_1++; ?>
                                     @endif
@@ -137,7 +138,7 @@
                             <a href="#">
                                 <span class="category">練習会</span>
                                 <?php $category_count_side_2 = 0; ?>
-                                @foreach ($posts as $post)
+                                @foreach ($all as $post)
                                     @if ($post->tag == "練習会")
                                         <?php $category_count_side_2++; ?>
                                     @endif
@@ -149,7 +150,7 @@
                             <a href="#">
                                 <span class="category">機材レビュー</span>
                                 <?php $category_count_side_3 = 0; ?>
-                                @foreach ($posts as $post)
+                                @foreach ($all as $post)
                                     @if ($post->tag == "機材レビュー")
                                         <?php $category_count_side_3++; ?>
                                     @endif
@@ -161,7 +162,7 @@
                             <a href="#">
                                 <span class="category">用品レビュー</span>
                                 <?php $category_count_side_4 = 0; ?>
-                                @foreach ($posts as $post)
+                                @foreach ($all as $post)
                                     @if ($post->tag == "用品レビュー")
                                         <?php $category_count_side_4++; ?>
                                     @endif
@@ -173,7 +174,7 @@
                             <a href="#">
                                 <span class="category">ブルベ</span>
                                 <?php $category_count_side_5 = 0; ?>
-                                @foreach ($posts as $post)
+                                @foreach ($all as $post)
                                     @if ($post->tag == "ブルベ")
                                         <?php $category_count_side_5++; ?>
                                     @endif
@@ -185,7 +186,7 @@
                             <a href="#">
                                 <span class="category">その他</span>
                                 <?php $category_count_side_etc = 0; ?>
-                                @foreach ($posts as $post)
+                                @foreach ($all as $post)
                                     @if ($post->tag == "その他")
                                         <?php $category_count_side_etc++; ?>
                                     @endif

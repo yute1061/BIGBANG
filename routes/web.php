@@ -36,7 +36,7 @@ Route::controller(UserController::class)->prefix('admin')->name('admin.')->middl
     Route::get('user/mypage', 'mypage')->name('user.index');
 });
 
-// adminここまで //
+//----adminここまで----//
 
 Auth::routes();
 
