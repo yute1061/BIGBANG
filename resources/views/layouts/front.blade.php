@@ -47,7 +47,7 @@
                     <ul class="b">
                         <li><a href="{{ route('toppage') }}">HOME</a></li>
                         <li><a href="{{ route('about') }}">BIGBANGについて</a></li>
-                        <li><a href="#">レースレポ</a></li>
+                        <li><a href="{{ route('toppage', ['tag' => "レースレポ", 'mode' => 2]) }}">レースレポ</a></li>
                         <li><a href="#">レース日程</a></li>
                         <li><a href="#">お問い合わせ</a></li>
                     </ul>
@@ -62,7 +62,7 @@
                     <div>
                         <div class="widgettitle">記事検索</div>
                         <form action="{{ route('toppage') }}" method="get" class="searchform" role="search">
-                          	<input type="text" placeholder="検索" name="search" value="{{ old('search') }}">
+                          	<input type="text" placeholder="タイトルor本文で検索" name="search" value="{{ old('search') }}">
                           	<input type="hidden" name="mode" value=1><!--検索したときはtoppage表示のモードを変える-->
                           	<button type="submit">
                                       {{ __('検索') }}
@@ -123,7 +123,7 @@
                     <div class="widgettitle">カテゴリー</div>
                     <ul>
                         <li class="category">
-                            <a href="#">
+                            <a href="{{ route('toppage', ['tag' => $post->tag, 'mode' => 2]) }}">
                                 <span class="category_name">レースレポ</span>
                                 <?php $category_count_side_1=0; ?>
                                 @foreach ($all as $post)
