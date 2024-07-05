@@ -4,7 +4,7 @@
 
 @section('main')
 <main id="main" class="main" itemscope="" itemtype="https://schema.org/Blog" style="height: auto !important;">
-    <h1>TEAM BIGBANGについて</h1></br>
+    <h1 style="font-size: 3.5rem;">TEAM BIGBANGについて</h1></br>
     
     <p>TEAM BIGBANGのホームページへようこそ！</p>
     <p>当サイトでは、TEAM BIGBANGの活動報告及びチーム員による自転車に関わる情報発信を行っていきます</p><br>
@@ -15,7 +15,7 @@
     
     <p>チーム創立は2014年、チームリーダーとその自転車仲間数名から始まった当チームは、</p>
     <p>少しずつ仲間の輪を広げながら現在では10〜30代のメンバーを中心に20名以上で活動しています。</p>
-    <img width="800" height="533" src="{{ secure_asset('images/LINE_ALBUM_240221_0.jpg/') }}">
+    <img width="800" height="533" src="{{ secure_asset('images/LINE_ALBUM_240221_0.jpg/') }}"><br>
     <a style="font-size: 0.7rem;">創立メンバーによるレース後打ち上げの様子</a><br><br>
     
     <p>一般的にレーシングチームというと、入団テストがあって、メンバー全員がひたむきに練習し、</p>
