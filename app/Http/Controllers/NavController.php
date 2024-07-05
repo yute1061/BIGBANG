@@ -199,10 +199,16 @@ class NavController extends Controller
         return view('article.page', ['article' => $article, 'user' => $user, 'all' => $all]);
     }
     
-    public function about()
+    public function about(Request $request)
     {   
         $all = Article::all()->sortByDesc('id');
         return view('about.about', ['all' => $all]);
+    }
+    
+    public function schedule(Request $request)
+    {
+        $all = Article::all()->sortByDesc('id');
+        return view('schedule.schedule', ['all' => $all]);     
     }
     
     public function contact()

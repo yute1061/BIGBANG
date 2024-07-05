@@ -45,6 +45,7 @@ Route::controller(PublicNavController::class)->group(function() {
     Route::get('/', 'toppage')->name('toppage');
     Route::get('about', 'about')->name('about');
     Route::get('article/page', 'article_page')->name('article.page');
+    Route::get('schedule', 'schedule')->name('schedule');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

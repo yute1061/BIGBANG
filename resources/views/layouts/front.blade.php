@@ -49,7 +49,7 @@
                         <li><a href="{{ route('toppage') }}">HOME</a></li>
                         <li><a href="{{ route('about') }}">BIGBANGについて</a></li>
                         <li><a href="{{ route('toppage', ['tag' => "レースレポ", 'mode' => 2]) }}">レースレポ</a></li>
-                        <li><a href="#">レース日程</a></li>
+                        <li><a href="{{ route('schedule') }}">レース日程</a></li>
                     </ul>
                 </nav>  
             </header>
