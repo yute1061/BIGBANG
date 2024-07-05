@@ -32,14 +32,15 @@
             <header class="header">
                 <a class="title" href="{{ route('toppage') }}" style="font-weight: bold;">                     
                     <div>
-                        <div style="float: left;" {{--text-align: center;--}}>
-                            <div><span style="font-size: 50px;">T&nbsp;E&nbsp;A&nbsp;M</span>&emsp;&emsp;{{--全角スペース--}}<span style="font-size: 70px;">B&nbsp;I&nbsp;G&nbsp;B&nbsp;A&nbsp;N&nbsp;G</span></div>
+                        <div{{--style="float: left;"--}} {{--text-align: center;--}}>
+                            <img style="width: 60%;" src="{{ secure_asset('images/team_name.jpg/') }}">
+                            {{--
+                            <div><span style="font-size: 50px;">T&nbsp;E&nbsp;A&nbsp;M</span>&emsp;&emsp;<span style="font-size: 70px;">B&nbsp;I&nbsp;G&nbsp;B&nbsp;A&nbsp;N&nbsp;G</span></div>
                             <div style="margin-top: -20px;"><span style="font-size: 30px;">Roadrace&nbsp;Team&nbsp;in&nbsp;Kumamoto</span></div>
-                        </div>
-                        <div>
-                            <img class="logo_2" style="margin-left: 220px; width: 80px; margin-top: 57px;" src="{{ secure_asset('images/935503.jpeg/') }}">
-                            <img class="logo_2" style="width: 110px; margin-top: 28px;" src="{{ secure_asset('images/935503.jpeg/') }}">
-                            <img class="logo_2" style="width: 140px;" src="{{ secure_asset('images/935503.jpeg/') }}">
+                            --}}
+                            <img class="logo_2" style="margin-left: 130px; width: 80px; margin-top: 100px;" src="{{ secure_asset('images/935503.jpeg/') }}">
+                            <img class="logo_2" style="width: 110px; margin-top: 70px;" src="{{ secure_asset('images/935503.jpeg/') }}">
+                            <img class="logo_2" style="width: 140px; margin-top: 40px;" src="{{ secure_asset('images/935503.jpeg/') }}">
                         </div>
                     </div>
                 </a>
@@ -49,7 +50,6 @@
                         <li><a href="{{ route('about') }}">BIGBANGについて</a></li>
                         <li><a href="{{ route('toppage', ['tag' => "レースレポ", 'mode' => 2]) }}">レースレポ</a></li>
                         <li><a href="#">レース日程</a></li>
-                        <li><a href="#">お問い合わせ</a></li>
                     </ul>
                 </nav>  
             </header>
@@ -59,28 +59,49 @@
                     <div>
                         <img width="100%" src="{{ secure_asset('images/Screen_BIGBANG_2700×2700-min.png/') }}">
                     </div>
-                    <div>
-                        <div class="widgettitle">記事検索</div>
-                        <form action="{{ route('toppage') }}" method="get" class="searchform" role="search">
-                          	<input type="text" placeholder="タイトルor本文で検索" name="search" value="{{ old('search') }}">
-                          	<input type="hidden" name="mode" value=1><!--検索したときはtoppage表示のモードを変える-->
-                          	<button type="submit">
-                                      {{ __('検索') }}
-                            </button>
-                        </form>
-                    </div>
+                    <div class="widgettitle">記事検索</div>
+                    <form action="{{ route('toppage') }}" method="get" class="searchform" role="search">
+                      	<input type="text" size="25" placeholder="タイトルor本文から検索" name="search" value="{{ old('search') }}">
+                      	<input type="hidden" name="mode" value=1><!--検索したときはtoppage表示のモードを変える-->
+                      	<button type="submit">
+                                  {{ __('検索') }}
+                        </button>
+                    </form>
                     
+                    <div class="widgettitle">チームSNS</div>
+                    <div class="meta">
+                        <ul class="team_sns">
+                            <li style="float: left; margin-left: 20px;">
+                                <a href="https://www.facebook.com/teambigbangkumamoto/?locale=ja_JP" target="_blank">
+                                    <img src="{{ secure_asset('images/facebook-logo_49354.png/') }}">
+                                </a>
+                            </li>                             
+                            <li>
+                                <a href="https://www.instagram.com/team_bigbang_imp/" target="_blank">
+                                    <img src="{{ secure_asset('images/instagram_1384015.png/') }}">
+                                </a>
+                            </li>                                                                
+                        </ul> 
+                        <p style="text-align: left; margin-top: 20px;">チーム・練習会への参加申し込みはSNSのDMからお願いいたします！</p>
+                        <p style="text-align: left;">定期練習会：毎週金曜日早朝</p>
+                    </div>
+                   
                     <div class="widgettitle">サイト管理者</div>
-                    <div class="diver_widget_profile clearfix">
-                        <div class="clearfix coverimg on lazyloaded">
-                            <img class="img_profile" src="{{ secure_asset('images/profile.jpg/') }}" class="img_new_article">
+                    <div class="profile">
+                        <div class="img_profile">
+                            <img src="{{ secure_asset('images/profile.jpg/') }}">
                         </div>
-                        <div class="name">テズカ</div>
-                        <div class="img_meta">
-                            <div class="meta">
-                                <p>2019年よりTEAM BIGBANGに所属。一応ロードバイク歴10年。最近はブルべに夢中でレース活動は控え気味...でもヒルクライムとエンデューロには出たいと思ってます。目下の目標はSR取得で、2027年のPBP出場を目指してます。</p>
-                                <p>愛車はチームメイトに塗装してもらったSTORCK Fascenario.3 comp。マイナーなブランドやアイテムを使いたがる癖あり。</p>
-                            </div>
+                        <div>
+                            <div class="name">テズカ</div>
+                            <div style="margin-right: 48px;">
+                                <a class="profile_sns" href="https://twitter.com/silencetezuka?ref_src=twsrc%5Etfw" target="_blank">
+                                    <img src="{{ secure_asset('images/twitter_x_new_logo_x_rounded_icon_256078.png') }}">
+                                </a>                                                                                    
+                            </div> 
+                        </div>
+                        <div class="meta">
+                            <p style="text-align: left;">2019年よりTEAM BIGBANGに所属<br>一応ロードバイク歴10年。最近はレースよりブルベに夢中...ヒルクライムとエンデューロには出ます。目下の目標はSR取得で、2027年のPBP出場を目指してます（出るとは言ってない）</p>
+                            <p style="text-align: left;">愛車はチームメイトに塗装してもらったSTORCK Fascenario.3 comp<br>マイナーなブランドやアイテムを使いたがる癖あり</p>
                         </div>
                     </div>
                     
@@ -121,7 +142,7 @@
                     </div>
         		    
                     <div class="widgettitle">カテゴリー</div>
-                    <ul>
+                    <ul style="margin-left: 15px;">
                         <li class="category">
                             <a href="{{ route('toppage', ['tag' => $post->tag, 'mode' => 2]) }}">
                                 <span class="category_name">レースレポ</span>
@@ -195,32 +216,36 @@
                             </a>
                         </li>
                     </ul>
-                
+                    {{--
                     <div>
                         <div class="widgettitle">X（エックス）</div>
                             <a class="twitter-timeline" data-height="600" href="https://twitter.com/silencetezuka?ref_src=twsrc%5Etfw">Tweets by silencetezuka</a> 
                             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                         </div> 
                     </div>
+                    --}}
                 </aside>
             </div>
             <footer class="footer">
-      				  <div class="footer_content clearfix">
-      					    <nav class="footer_navi" role="navigation">
-      						      <ul id="menu-%e3%83%95%e3%83%83%e3%82%bf%e3%83%bc%e3%83%a1%e3%83%8b%e3%83%a5%e3%83%bc" class="menu">
-      						          <li id="menu-item-4748" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4748">
-      						              <a href="https://www.longride.org/webinfo/">当サイトについて</a>
-      						          </li>
+      			<div class="footer_content clearfix">
+      			    {{--
+      				<nav class="footer_navi" role="navigation">
+      					<ul id="menu-%e3%83%95%e3%83%83%e3%82%bf%e3%83%bc%e3%83%a1%e3%83%8b%e3%83%a5%e3%83%bc" class="menu">
+  				          　<li id="menu-item-4748" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4748">
+  				                <a href="https://www.longride.org/webinfo/">当サイトについて</a>
+  				          　</li>
                             <li id="menu-item-4749" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2 current_page_item menu-item-4749">
                                 <a href="https://www.longride.org/webprofile/" aria-current="page">管理者について</a>
                             </li>
                             <li id="menu-item-4747" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4747">
                                 <a href="https://www.longride.org/contactus/">お問い合わせ</a>
                             </li>
-                        </ul>					
+                        </ul>
                     </nav>
+                    --}}
       			    <div id="copyright">2014-2024 TEAM BIGBANG</div>
-      			</footer>
+      			</div>
+      		</footer>
         </div>
     </body>
 </html>
